@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">App Libreria</string>
+    <string name="agregar_al_carro">Agregar al carro</string>
 </resources>
