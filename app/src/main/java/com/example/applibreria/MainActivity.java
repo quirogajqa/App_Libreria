@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private NavController navController;
-    private LibroAdapter adapter;
-    private List<Libro> listaLibros = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +38,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        adapter = new LibroAdapter(listaLibros);
-        // Inicializar RecyclerView
-        initRecyclerView();
-
-        // Cargar datos
-        cargarDatos();
-
         setupNavigation();
     }
 
@@ -57,30 +48,6 @@ public class MainActivity extends AppCompatActivity {
             navController = ((NavHostFragment) navHostFragment).getNavController();
             NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
         }
-    }
-
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewLibros);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        listaLibros = new ArrayList<>();
-        adapter = new LibroAdapter(listaLibros);
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void cargarDatos() {
-        listaLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz));
-        listaLibros.add(new Libro("El psicoanalista", "John Katzenbach", "2002", R.drawable.el_psicoanalista));
-        listaLibros.add(new Libro("La casa de los espíritus", "Isabel Allende", "1982", R.drawable.la_casa_de_los_espiritus));
-        listaLibros.add(new Libro("Cien años de soledad", "Gabriel García Márquez", "1967", R.drawable.cien_anios_de_soledad));
-        listaLibros.add(new Libro("El hobbit", "J. R. R. Tolkien", "1937", R.drawable.el_hobbit));
-        listaLibros.add(new Libro("Harry Potter y la piedra filosofal", "J. K. Rowling", "1997", R.drawable.harry_potter_y_la_piedra_filosofal));
-        listaLibros.add(new Libro("Fuego y sangre", "George R. R. Martin", "2018", R.drawable.fuego_y_sangre));
-        listaLibros.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", "1605", R.drawable.don_quijote));
-        listaLibros.add(new Libro("Alas de sangre", "Rebecca Yarros", "2023", R.drawable.alas_de_sangre));
-
-// Notificar al adaptador que los datos han cambiado
-        adapter.notifyDataSetChanged();
     }
 
 }
