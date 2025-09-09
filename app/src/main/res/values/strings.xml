@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">App Libreria</string>
     <string name="agregar_al_carro">Agregar al carro</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="portada_del_libro">Portada del libro</string>
+    <string name="ver_detalle"><u>Ver detalle</u></string>
+
+
+    <!-- Descripción del libro -->
+    <string name="ejemplo_descripcion">Ejemplo de descripción del libro…</string>
+    <string name="la_bailarina_de_auschwitz">Violet Sorrengail creía que se uniría al Cuadrante de los Escribas para vivir una vida tranquila, sin embargo, por órdenes de su madre, debe unirse a los miles de candidatos que, en el Colegio de Guerra de Basgiath, luchan por formar parte de la élite de Navarre: el Cuadrante de los Jinetes de dragones.Cuando eres más pequeña y frágil que los demás tu vida corre peligro, porque los dragones no se vinculan con humanos débiles. Además, con más jinetes que dragones disponibles, muchos la matarían con tal de mejorar sus probabilidades de éxito; y hay otros, como el despiadado Xaden Riorson, el líder de ala más poderoso del Cuadrante de Jinetes, que la asesinarían simplemente por ser la hija de la comandante general. Para sobrevivir, necesitará aprovechar al máximo todo su ingenio. Mientras la guerra se torna más letal Violet sospecha que los líderes de Navarre esconden un terrible secreto…</string>
+    <string name="el_psicoanalista">Ejemplo de descripción del libro el psicoanalista…</string>
+    <string name="la_casa_de_los_espiritus">Ejemplo de descripción del libro la casa de los espíritus</string>
+    <string name="cien_anios_de_soledad">Ejemplo de descripción del libro cien años de soledad</string>
+    <string name="el_hobbit">Ejemplo de descripción del libro…el hobbit</string>
+    <string name="harry_potter_y_la_piedra_filosofal">Ejemplo de descripción del libro Harry Potter y la piedra filosofal</string>
+    <string name="fuego_y_sangre">Ejemplo de descripción del libro fuego y sangre</string>
+    <string name="don_quijote">Ejemplo de descripción del libro don quijote</string>
+    <string name="alas_de_sangre">Ejemplo de descripción del libro alas de sangre</string>
+
+
 </resources>

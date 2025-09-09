@@ -5,10 +5,68 @@
     android:layout_height="match_parent"
     tools:context=".DescripcionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B2EBF2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:scrollbars="vertical">
+
+            <ImageView
+                android:id="@+id/iv_portada"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:contentDescription="@string/portada_del_libro"
+                android:scaleType="fitCenter"
+                android:src="@drawable/alas_de_sangre" />
+
+            <TextView
+                android:id="@+id/tv_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                tools:text="Alas de Sangre"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- Título del libro -->
+            <TextView
+                android:id="@+id/tv_autor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:text="Rebecca Yarros"
+                android:textSize="18sp" />
+
+            <!-- Año de publicación -->
+            <TextView
+                android:id="@+id/tv_anio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:text="2023"
+                android:textColor="#006064"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_detalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:justificationMode="inter_word"
+                tools:text="@string/ejemplo_descripcion"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
