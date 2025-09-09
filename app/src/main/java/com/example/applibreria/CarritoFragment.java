@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class CarritoFragment extends Fragment {
+public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnItemEliminadoListener{
+
+    private LibroCarritoAdapter adapter;
+    private List<Libro> librosEnCarrito;
 
     public CarritoFragment() {
         // Constructor vacío requerido
@@ -32,9 +35,20 @@ public class CarritoFragment extends Fragment {
         List<Libro> librosEnCarrito = CarritoManager.getInstance().getItemsCarrito();
 
         // Configurar el RecyclerView
-        RecyclerView recyclerViewCarrito = view.findViewById(R.id.recyclerViewCarrito); // Asegúrate de que el ID coincida con tu fragment_Carrito.xml
-        LibroCarritoAdapter adapter = new LibroCarritoAdapter(librosEnCarrito);
+        RecyclerView recyclerViewCarrito = view.findViewById(R.id.recyclerViewCarrito);
+        adapter = new LibroCarritoAdapter(librosEnCarrito, this);
+        //LibroCarritoAdapter adapter = new LibroCarritoAdapter(librosEnCarrito);
         recyclerViewCarrito.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerViewCarrito.setAdapter(adapter);
+    }
+
+    // 4. Implementar el método de la interfaz
+    @Override
+    public void onLibroEliminado(Libro libro) {
+        // 1. Llama directamente al método de eliminación del CarritoManager
+        CarritoManager.getInstance().getItemsCarrito().remove(libro);
+
+        // Notificar al adaptador que los datos han cambiado para refrescar la vista
+        adapter.notifyDataSetChanged();
     }
 }
