@@ -7,12 +7,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#B2EBF2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#B2EBF2"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingHorizontal="16dp"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:justificationMode="inter_word"
-                tools:text="@string/ejemplo_descripcion"
+                tools:text="@string/descripcion_inventada"
                 android:textSize="18sp" />
 
         </LinearLayout>
