@@ -37,21 +37,21 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         // Obtener el estudiante específico de esta posición
         Libro libro = listaLibros.get(position);
 
-        // Llenar las vistas con los datos del estudiante
-        holder.tvNombreCompleto.setText(configuracion.getNombreCompleto());
+        // Llenar las vistas con los datos del libro
+        holder.tvNombreCompleto.setText(libro.getTitulo());
 
         // Lógica condicional: Si no tiene app asignada, mostrar "Pendiente"
-        if (configuracion.getApp().equals("pendiente")) {
+        if (libro.getApp().equals("pendiente")) {
             holder.tvApp.setText("App: Pendiente");
         } else {
-            holder.tvApp.setText("App: " + configuracion.getApp());
+            holder.tvApp.setText("App: " + libro.getApp());
         }
 
         // Lógica condicional: Si no tiene fecha, mostrar "Sin fecha"
-        if (configuracion.getFechaInscripcion().equals("pendiente")) {
+        if (libro.getFechaInscripcion().equals("pendiente")) {
             holder.tvFechaInscripcion.setText("Fecha: Sin inscribir");
         } else {
-            holder.tvFechaInscripcion.setText("Inscrito: " + configuracion.getFechaInscripcion());
+            holder.tvFechaInscripcion.setText("Inscrito: " + libro.getFechaInscripcion());
         }
     }
 
