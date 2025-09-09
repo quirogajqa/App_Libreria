@@ -3,6 +3,7 @@ package com.example.applibreria;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,12 +14,13 @@ import java.util.List;
 
 public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHolder> {
     // Lista de datos que se mostrará en el RecyclerView
+
     private final List<Libro> listaLibros;
 
-
     public LibroAdapter(List<Libro> listaLibros) {
-        this.listaLibros = this.listaLibros;
+        this.listaLibros = listaLibros;
     }
+
 
     @NonNull
     @Override
@@ -37,22 +39,13 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         // Obtener el estudiante específico de esta posición
         Libro libro = listaLibros.get(position);
 
-        // Llenar las vistas con los datos del estudiante
-        holder.tvNombreCompleto.setText(configuracion.getNombreCompleto());
+        // Llenar las vistas con los datos del libro
+        holder.tvTitulo.setText(libro.getTitulo());
 
-        // Lógica condicional: Si no tiene app asignada, mostrar "Pendiente"
-        if (configuracion.getApp().equals("pendiente")) {
-            holder.tvApp.setText("App: Pendiente");
-        } else {
-            holder.tvApp.setText("App: " + configuracion.getApp());
-        }
+        holder.tvAutor.setText(libro.getAutor());
+        holder.tvAnio.setText(libro.getAnio());
+        holder.ivPortada.setImageResource(libro.getImagen());
 
-        // Lógica condicional: Si no tiene fecha, mostrar "Sin fecha"
-        if (configuracion.getFechaInscripcion().equals("pendiente")) {
-            holder.tvFechaInscripcion.setText("Fecha: Sin inscribir");
-        } else {
-            holder.tvFechaInscripcion.setText("Inscrito: " + configuracion.getFechaInscripcion());
-        }
     }
 
 
@@ -64,7 +57,8 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
     public static class LibroViewHolder extends RecyclerView.ViewHolder {
         // Referencias a las vistas del layout item_estudiante.xml
-        TextView tvNombreCompleto, tvApp, tvFechaInscripcion;
+        TextView tvTitulo, tvAutor, tvAnio;
+        ImageView ivPortada;
 
         /**
          * Constructor del ViewHolder: aquí es donde se hace findViewById
@@ -76,9 +70,10 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             super(itemView);
             // Buscar y guardar las referencias a cada TextView
             // Esto solo se hace una vez por ViewHolder, no por cada bind
-            tvNombreCompleto = itemView.findViewById(R.id.tvNombreCompleto);
-            tvApp = itemView.findViewById(R.id.tvApp);
-            tvFechaInscripcion = itemView.findViewById(R.id.tvFechaInscripcion);
+            tvTitulo = itemView.findViewById(R.id.tv_titulo);
+            tvAutor = itemView.findViewById(R.id.tv_autor);
+            tvAnio = itemView.findViewById(R.id.tv_anio);
+            ivPortada = itemView.findViewById(R.id.iv_portada);
         }
     }
 }
