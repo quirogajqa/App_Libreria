@@ -1,8 +1,6 @@
 package com.example.applibreria;
 
 
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
 
 public class Libro {
 
@@ -11,11 +9,14 @@ public class Libro {
     private String anio;
     private int imagen;
 
-    public Libro (String titulo, String autor, String anio, int imagen) {
+    private int descripcion;
+
+    public Libro (String titulo, String autor, String anio, int imagen, int descripcion) {
         this.titulo = titulo;
         this.autor = autor;
         this.anio = anio;
         this.imagen = imagen;
+        this.descripcion = descripcion;
     }
 
     public String getTitulo() {
@@ -34,6 +35,10 @@ public class Libro {
         return imagen;
     }
 
+    public int getDescripcion() {
+        return descripcion;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -48,5 +53,9 @@ public class Libro {
 
     public void setImagen(int imagen) {
         this.imagen = imagen;
+    }
+
+    public void setDescripcion(int descripcion) {
+        this.descripcion = descripcion;
     }
 }

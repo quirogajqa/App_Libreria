@@ -11,7 +11,19 @@
     <fragment
         android:id="@+id/listaFragment"
         android:name="com.example.applibreria.ListaFragment"
-        android:label="Libros"/>
+        android:label="Libros">
+        <action
+            android:id="@+id/action_listaFragment_to_descripcionFragment"
+            app:destination="@id/descripcionFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/descripcionFragment"
+        android:name="com.example.applibreria.DescripcionFragment"
+        android:label="Descripcion">
+        <argument
+            android:name="nombre"
+            app:argType="string"/>
+    </fragment>
     <fragment
         android:id="@+id/carritoFragment"
         android:name="com.example.applibreria.CarritoFragment"

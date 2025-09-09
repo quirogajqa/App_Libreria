@@ -1,5 +1,6 @@
 package com.example.applibreria;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -46,6 +48,18 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         holder.tvAnio.setText(libro.getAnio());
         holder.ivPortada.setImageResource(libro.getImagen());
 
+        holder.tvVerDetalle.setOnClickListener(v -> {
+
+            Bundle args = new Bundle();
+            args.putString("titulo", libro.getTitulo());
+            args.putString("autor", libro.getAutor());
+            args.putString("anio",  libro.getAnio());
+            args.putInt("descripcion", libro.getDescripcion());
+            args.putInt("imagenResId", libro.getImagen());
+
+            Navigation.findNavController(v).navigate(R.id.action_listaFragment_to_descripcionFragment, args);
+        });
+
     }
 
 
@@ -59,6 +73,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         // Referencias a las vistas del layout item_estudiante.xml
         TextView tvTitulo, tvAutor, tvAnio;
         ImageView ivPortada;
+        TextView tvVerDetalle;
 
         /**
          * Constructor del ViewHolder: aquí es donde se hace findViewById
@@ -74,6 +89,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             tvAutor = itemView.findViewById(R.id.tv_autor);
             tvAnio = itemView.findViewById(R.id.tv_anio);
             ivPortada = itemView.findViewById(R.id.iv_portada);
+            tvVerDetalle = itemView.findViewById(R.id.tv_ver_detalle);
         }
     }
 }
