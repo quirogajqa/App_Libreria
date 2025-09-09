@@ -50,6 +50,7 @@ public class ListaFragment extends Fragment {
         cargarDatos();
     }
     private void cargarDatos() {
+        listaLibros.clear();
         listaLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz, R.string.la_bailarina_de_auschwitz));
         listaLibros.add(new Libro("El psicoanalista", "John Katzenbach", "2002", R.drawable.el_psicoanalista, R.string.el_psicoanalista));
         listaLibros.add(new Libro("La casa de los espíritus", "Isabel Allende", "1982", R.drawable.la_casa_de_los_espiritus, R.string.la_casa_de_los_espiritus));

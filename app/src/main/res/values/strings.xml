@@ -3,10 +3,12 @@
     <string name="agregar_al_carro">Agregar al carro</string>
     <string name="portada_del_libro">Portada del libro</string>
     <string name="ver_detalle"><u>Ver detalle</u></string>
+    <string name="titulo_top_ventas">Libros más vendidos</string>
 
 
     <!-- Descripción del libro -->
     <string name="ejemplo_descripcion">Ejemplo de descripción del libro…</string>
+    <string name="descripcion_inventada">Esta es una descripción inventada de un libro que no existe, pero que intenta sonar como si fuera real y profundo. El relato describe un viaje imaginario a través de paisajes cambiantes, personajes que aparecen y desaparecen, y emociones que se transforman con el paso de cada página. Es una descripción inventada de un libro que juega con la idea de la memoria, el olvido y la búsqueda personal de un propósito. Aunque no hay historia concreta, el texto pretende dar la sensación de misterio, invitando al lector a creer que algo significativo lo espera adentro, como si cada frase fuera una puerta hacia nuevas posibilidades narrativas, con giros inesperados y matices que despiertan la imaginación del lector.</string>
     <string name="la_bailarina_de_auschwitz">Violet Sorrengail creía que se uniría al Cuadrante de los Escribas para vivir una vida tranquila, sin embargo, por órdenes de su madre, debe unirse a los miles de candidatos que, en el Colegio de Guerra de Basgiath, luchan por formar parte de la élite de Navarre: el Cuadrante de los Jinetes de dragones.Cuando eres más pequeña y frágil que los demás tu vida corre peligro, porque los dragones no se vinculan con humanos débiles. Además, con más jinetes que dragones disponibles, muchos la matarían con tal de mejorar sus probabilidades de éxito; y hay otros, como el despiadado Xaden Riorson, el líder de ala más poderoso del Cuadrante de Jinetes, que la asesinarían simplemente por ser la hija de la comandante general. Para sobrevivir, necesitará aprovechar al máximo todo su ingenio. Mientras la guerra se torna más letal Violet sospecha que los líderes de Navarre esconden un terrible secreto…</string>
     <string name="el_psicoanalista">Ejemplo de descripción del libro el psicoanalista…</string>
     <string name="la_casa_de_los_espiritus">Ejemplo de descripción del libro la casa de los espíritus</string>
@@ -16,6 +18,7 @@
     <string name="fuego_y_sangre">Ejemplo de descripción del libro fuego y sangre</string>
     <string name="don_quijote">Ejemplo de descripción del libro don quijote</string>
     <string name="alas_de_sangre">Ejemplo de descripción del libro alas de sangre</string>
+
 
 
 </resources>
