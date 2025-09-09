@@ -70,8 +70,8 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         });
 
         // 3. Manejar el Checkbox
-        holder.cbSeleccion.setOnCheckedChangeListener(null); // Evita problemas de reciclado de vistas
-        holder.cbSeleccion.setChecked(libro.isSeleccionado()); // Asegúrate de tener un campo isSeleccionado en tu clase Libro
+        holder.cbSeleccion.setOnCheckedChangeListener(null);
+        holder.cbSeleccion.setChecked(libro.isSeleccionado());
         holder.cbSeleccion.setOnCheckedChangeListener((buttonView, isChecked) -> {
             libro.setSeleccionado(isChecked);
             if (listener != null) {
