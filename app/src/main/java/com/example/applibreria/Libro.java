@@ -9,14 +9,20 @@ public class Libro {
     private String anio;
     private int imagen;
 
+    private double precio;
+
+    private boolean isSeleccionado;
+
     private int descripcion;
 
-    public Libro (String titulo, String autor, String anio, int imagen, int descripcion) {
+    public Libro (String titulo, String autor, String anio, int imagen, int descripcion, double precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.anio = anio;
         this.imagen = imagen;
         this.descripcion = descripcion;
+        this.precio = precio;
+        this.isSeleccionado = false;
     }
 
     public String getTitulo() {
@@ -39,6 +45,14 @@ public class Libro {
         return descripcion;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public boolean isSeleccionado() {
+        return isSeleccionado;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -57,5 +71,13 @@ public class Libro {
 
     public void setDescripcion(int descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setSeleccionado(boolean seleccionado) {
+        isSeleccionado = seleccionado;
     }
 }

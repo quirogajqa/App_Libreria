@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+
 import java.util.List;
 
 
@@ -19,10 +21,17 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
     private final List<Libro> listaLibros;
 
-    public LibroAdapter(List<Libro> listaLibros) {
+    private final OnLibroSeleccionadoListener listener;
+    // 2. Constructor actualizado
+    public LibroAdapter(List<Libro> listaLibros, OnLibroSeleccionadoListener listener) {
         this.listaLibros = listaLibros;
+        this.listener = listener;
     }
 
+    // 1. Interfaz para manejar el clic del Checkbox
+    public interface OnLibroSeleccionadoListener {
+        void onLibroSeleccionado(Libro libro, boolean isSeleccionado);
+    }
 
     @NonNull
     @Override
@@ -38,15 +47,15 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
     @Override
     public void onBindViewHolder(@NonNull LibroViewHolder holder, int position) {
-        // Obtener el estudiante específico de esta posición
+        // Obtener el libro específico de esta posición
         Libro libro = listaLibros.get(position);
 
         // Llenar las vistas con los datos del libro
         holder.tvTitulo.setText(libro.getTitulo());
-
         holder.tvAutor.setText(libro.getAutor());
         holder.tvAnio.setText(libro.getAnio());
         holder.ivPortada.setImageResource(libro.getImagen());
+
 
         holder.tvVerDetalle.setOnClickListener(v -> {
 
@@ -58,6 +67,16 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             args.putInt("imagenResId", libro.getImagen());
 
             Navigation.findNavController(v).navigate(R.id.action_listaFragment_to_descripcionFragment, args);
+        });
+
+        // 3. Manejar el Checkbox
+        holder.cbSeleccion.setOnCheckedChangeListener(null); // Evita problemas de reciclado de vistas
+        holder.cbSeleccion.setChecked(libro.isSeleccionado()); // Asegúrate de tener un campo isSeleccionado en tu clase Libro
+        holder.cbSeleccion.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            libro.setSeleccionado(isChecked);
+            if (listener != null) {
+                listener.onLibroSeleccionado(libro, isChecked);
+            }
         });
 
     }
@@ -75,6 +94,8 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         ImageView ivPortada;
         TextView tvVerDetalle;
 
+        final MaterialCheckBox cbSeleccion;
+
         /**
          * Constructor del ViewHolder: aquí es donde se hace findViewById
          * una sola vez por cada ViewHolder creado.
@@ -90,6 +111,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             tvAnio = itemView.findViewById(R.id.tv_anio);
             ivPortada = itemView.findViewById(R.id.iv_portada);
             tvVerDetalle = itemView.findViewById(R.id.tv_ver_detalle);
+            cbSeleccion = itemView.findViewById(R.id.cbSeleccion);
         }
     }
 }

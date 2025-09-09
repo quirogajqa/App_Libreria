@@ -16,6 +16,8 @@
     <string name="fuego_y_sangre">Ejemplo de descripción del libro fuego y sangre</string>
     <string name="don_quijote">Ejemplo de descripción del libro don quijote</string>
     <string name="alas_de_sangre">Ejemplo de descripción del libro alas de sangre</string>
+    <string name="pagar">Pagar</string>
+    <string name="eliminar_del_carro">eliminar_del_carro</string>
 
 
 </resources>

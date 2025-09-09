@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_listaFragment_to_descripcionFragment"
             app:destination="@id/descripcionFragment"/>
+        <action
+            android:id="@+id/action_listaFragment_to_carritoFragment"
+            app:destination="@id/carritoFragment"/>
     </fragment>
     <fragment
         android:id="@+id/descripcionFragment"
@@ -28,4 +31,7 @@
         android:id="@+id/carritoFragment"
         android:name="com.example.applibreria.CarritoFragment"
         android:label="Carrito"/>
+    <argument
+        android:name="titulo"
+        app:argType="string"/>
 </navigation>
