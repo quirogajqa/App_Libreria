@@ -7,14 +7,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.applibreria.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
+
+    private NavController navController;
     private LibroAdapter adapter;
     private List<Libro> listaLibros = new ArrayList<>();
 
@@ -22,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -35,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Cargar datos
         cargarDatos();
+
+        setupNavigation();
+    }
+
+    private void setupNavigation() {
+        Fragment navHostFragment = getSupportFragmentManager().findFragmentById(binding.navHostFragment.getId());
+
+        if (navHostFragment instanceof NavHostFragment) {
+            navController = ((NavHostFragment) navHostFragment).getNavController();
+            NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+        }
     }
 
     private void initRecyclerView() {
