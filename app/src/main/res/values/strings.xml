@@ -4,7 +4,10 @@
     <string name="portada_del_libro">Portada del libro</string>
     <string name="ver_detalle"><u>Ver detalle</u></string>
     <string name="titulo_top_ventas">Libros más vendidos</string>
-
+    <string name="pagar">Pagar</string>
+    <string name="eliminar_del_carro">eliminar_del_carro</string>
+    <string name="bienvenido">BIENVENIDO</string>
+    <string name="logo_app">Logo app</string>
 
     <!-- Descripción del libro -->
     <string name="ejemplo_descripcion">Ejemplo de descripción del libro…</string>
@@ -18,9 +21,5 @@
     <string name="fuego_y_sangre">La historia de la dinastía Targaryen, la única familia de señores de dragones que sobrevivió al cataclismo de Valyria. Este libro es la crónica de su conquista de Westeros, sus reinados, sus guerras y su inevitable declive.</string>
     <string name="don_quijote">Alonso Quijano, de tanto leer novelas de caballería, pierde la cordura y se cree un caballero andante. Con su fiel escudero, Sancho Panza, vive aventuras que solo existen en su mente, desafiando a un mundo que ha perdido la magia.</string>
     <string name="alas_de_sangre">Violet Sorrengail es obligada a unirse al Cuadrante de Jinetes, una academia donde los dragones matan a quienes son débiles y los cadetes no tienen piedad. Si sobrevive al entrenamiento, tendrá que unirse a la guerra. En este lugar, la única opción es volar o morir.</string>
-    <string name="pagar">Pagar</string>
-    <string name="eliminar_del_carro">eliminar_del_carro</string>
-
-
 
 </resources>
