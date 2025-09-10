@@ -83,6 +83,7 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
         }
     }
     private void cargarDatos() {
+        listaLibros.clear();
         listaLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz, R.string.la_bailarina_de_auschwitz, 19900));
         listaLibros.add(new Libro("El psicoanalista", "John Katzenbach", "2002", R.drawable.el_psicoanalista, R.string.el_psicoanalista, 24900));
         listaLibros.add(new Libro("La casa de los espíritus", "Isabel Allende", "1982", R.drawable.la_casa_de_los_espiritus, R.string.la_casa_de_los_espiritus, 15900));
