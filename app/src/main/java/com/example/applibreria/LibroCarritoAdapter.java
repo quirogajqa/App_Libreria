@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.applibreria.R;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -16,10 +16,11 @@ import java.util.Locale;
 
 public class LibroCarritoAdapter extends RecyclerView.Adapter<LibroCarritoAdapter.CarritoViewHolder> {
 
-    // 1. Interfaz para el evento de eliminar
+    // Interfaz para el evento de eliminar
     public interface OnItemEliminadoListener {
         void onLibroEliminado(Libro libro);
     }
+
     private final List<Libro> listaLibros;
     private final OnItemEliminadoListener listener;
 
@@ -43,7 +44,7 @@ public class LibroCarritoAdapter extends RecyclerView.Adapter<LibroCarritoAdapte
         holder.ivPortada.setImageResource(libro.getImagen());
         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(new Locale("es", "CL"));
         holder.tvPrecio.setText(formatoMoneda.format(libro.getPrecio()));
-        // 3. Manejar el clic del botón de eliminar
+        // Manejar el clic del botón de eliminar
         holder.btnEliminar.setOnClickListener(v -> {
             if (listener != null) listener.onLibroEliminado(libro);
         });

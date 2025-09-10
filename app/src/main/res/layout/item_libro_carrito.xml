@@ -69,4 +69,5 @@
             app:tint="@color/design_default_color_error" />
 
     </LinearLayout>
+
 </com.google.android.material.card.MaterialCardView>

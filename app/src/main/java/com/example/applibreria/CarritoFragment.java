@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -17,7 +18,7 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnItemEliminadoListener{
+public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnItemEliminadoListener {
 
     private FragmentCarritoBinding binding;
     private LibroCarritoAdapter adapter;
@@ -33,7 +34,8 @@ public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnI
         // Inflar el layout del carrito
         binding = FragmentCarritoBinding.inflate(inflater, container, false);
         // 3. Devolver la vista raíz de tu layout
-        return binding.getRoot();}
+        return binding.getRoot();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnI
         // Configurar el RecyclerView
         RecyclerView recyclerViewCarrito = view.findViewById(R.id.recyclerViewCarrito);
         adapter = new LibroCarritoAdapter(librosEnCarrito, this);
-        //LibroCarritoAdapter adapter = new LibroCarritoAdapter(librosEnCarrito);
+
         recyclerViewCarrito.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerViewCarrito.setAdapter(adapter);
 
@@ -88,5 +90,11 @@ public class CarritoFragment extends Fragment implements LibroCarritoAdapter.OnI
         binding.tvSubtotal.setText(formatoMoneda.format(subtotal));
         binding.tvIva.setText(formatoMoneda.format(iva));
         binding.tvTotal.setText(formatoMoneda.format(total));
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // evita memory leaks
     }
 }

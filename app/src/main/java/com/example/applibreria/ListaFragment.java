@@ -27,7 +27,7 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
 
     private CarritoFragment carritoFragment;
 
-    // 1. Lista para guardar los libros seleccionados
+    //Lista para guardar los libros seleccionados
     private final List<Libro> librosSeleccionados = new ArrayList<>();
 
     public ListaFragment() {
@@ -57,14 +57,14 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
 
         carritoFragment = new CarritoFragment();
 
-        // 3. Manejar el clic del botón general
+        // Manejar el clic del botón agregar al carrito
         binding.btnAgregarCarro.setOnClickListener(v -> {
-            // Recorrer la lista de seleccionados y agregarlos al carro
+            // Recorrer la lista de seleccionados y agrega al carro
             for (Libro libro : librosSeleccionados) {
                 CarritoManager.getInstance().agregarLibro(libro);
                 Toast.makeText(requireContext(), libro.getTitulo() + " agregado al carro", Toast.LENGTH_SHORT).show();
             }
-            // Opcional: limpiar la selección
+            // Limpiar la selección
             librosSeleccionados.clear();
             for (Libro libro : listaLibros) {
                 libro.setSeleccionado(false);
@@ -73,8 +73,6 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
         });
     }
 
-    // 4. Implementación de la interfaz
-
     public void onLibroSeleccionado(Libro libro, boolean isSeleccionado) {
         if (isSeleccionado) {
             librosSeleccionados.add(libro);
@@ -82,6 +80,7 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
             librosSeleccionados.remove(libro);
         }
     }
+
     private void cargarDatos() {
         listaLibros.clear();
         listaLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz, R.string.la_bailarina_de_auschwitz, 19900));
@@ -97,8 +96,6 @@ public class ListaFragment extends Fragment implements LibroAdapter.OnLibroSelec
         // Notificar al adaptador que los datos han cambiado
         adapter.notifyDataSetChanged();
     }
-
-
 
     @Override
     public void onDestroyView() {

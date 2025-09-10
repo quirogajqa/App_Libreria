@@ -17,12 +17,11 @@ import java.util.List;
 
 
 public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHolder> {
+
     // Lista de datos que se mostrará en el RecyclerView
-
     private final List<Libro> listaLibros;
-
     private final OnLibroSeleccionadoListener listener;
-    // 2. Constructor actualizado
+
     public LibroAdapter(List<Libro> listaLibros, OnLibroSeleccionadoListener listener) {
         this.listaLibros = listaLibros;
         this.listener = listener;
@@ -56,13 +55,12 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         holder.tvAnio.setText(libro.getAnio());
         holder.ivPortada.setImageResource(libro.getImagen());
 
-
         holder.tvVerDetalle.setOnClickListener(v -> {
 
             Bundle args = new Bundle();
             args.putString("titulo", libro.getTitulo());
             args.putString("autor", libro.getAutor());
-            args.putString("anio",  libro.getAnio());
+            args.putString("anio", libro.getAnio());
             args.putInt("descripcion", libro.getDescripcion());
             args.putInt("imagenResId", libro.getImagen());
             args.putDouble("precio", libro.getPrecio());
@@ -90,7 +88,6 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
 
     public static class LibroViewHolder extends RecyclerView.ViewHolder {
-        // Referencias a las vistas del layout item_estudiante.xml
         TextView tvTitulo, tvAutor, tvAnio, tvPrecio;
         ImageView ivPortada;
         TextView tvVerDetalle;
@@ -106,7 +103,6 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         public LibroViewHolder(@NonNull View itemView) {
             super(itemView);
             // Buscar y guardar las referencias a cada TextView
-            // Esto solo se hace una vez por ViewHolder, no por cada bind
             tvTitulo = itemView.findViewById(R.id.tv_titulo);
             tvAutor = itemView.findViewById(R.id.tv_autor);
             tvAnio = itemView.findViewById(R.id.tv_anio);
@@ -117,11 +113,3 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         }
     }
 }
-
-/*
-FLUJO RESUMIDO:
-1. RecyclerView pregunta: "¿Cuántos elementos hay?" → getItemCount()
-2. RecyclerView dice: "Necesito una vista nueva" → onCreateViewHolder()
-3. RecyclerView dice: "Llena esta vista con datos" → onBindViewHolder()
-4. Usuario hace scroll → RecyclerView reutiliza vistas existentes llamando onBindViewHolder()
-*/

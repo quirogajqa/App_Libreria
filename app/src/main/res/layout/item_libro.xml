@@ -37,9 +37,9 @@
                 android:id="@+id/tv_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Alas de Sangre"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Alas de Sangre" />
 
             <!-- Título del libro -->
             <TextView
@@ -47,8 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                tools:text="Rebecca Yarros"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="Rebecca Yarros" />
 
             <!-- Año de publicación -->
             <TextView
@@ -56,9 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                tools:text="2023"
                 android:textColor="#006064"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="2023" />
 
             <TextView
                 android:id="@+id/tv_ver_detalle"
@@ -70,7 +70,6 @@
                 android:focusable="true"
                 android:text="@string/ver_detalle"
                 android:textColor="?attr/colorPrimary" />
-
 
         </LinearLayout>
 

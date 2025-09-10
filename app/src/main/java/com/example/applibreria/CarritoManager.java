@@ -21,7 +21,6 @@ public class CarritoManager {
     }
 
     // 5. Métodos para gestionar el carrito
-
     public void agregarLibro(Libro libro) {
         // Lógica para agregar un libro
         if (libro != null) {

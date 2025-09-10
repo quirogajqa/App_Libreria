@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CarritoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,29 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_light">
+
         <TextView
             android:id="@+id/tv_carrito_titulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Carrito de Compras"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/carrito_de_compras"
+            android:textColor="?attr/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary"
-            android:padding="16dp"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewCarrito"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:paddingHorizontal="8dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_carrito_titulo"
             app:layout_constraintBottom_toTopOf="@id/layoutTotales"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_carrito_titulo"
             tools:listitem="@layout/item_libro_carrito" />
 
         <com.google.android.material.card.MaterialCardView
@@ -44,8 +45,8 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,15 +57,17 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subtotal:"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorSecondary" />
+                        android:text="@string/subtotal"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp" />
+
                     <TextView
                         android:id="@+id/tvSubtotal"
                         android:layout_width="wrap_content"
@@ -77,16 +80,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="8dp">
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="IVA (19%):"
-                        android:textSize="16sp"
-                        android:textColor="?android:attr/textColorSecondary" />
+                        android:text="@string/iva_19"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp" />
+
                     <TextView
                         android:id="@+id/tvIva"
                         android:layout_width="wrap_content"
@@ -99,29 +104,31 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="?attr/dividerHorizontal"
-                    android:layout_marginVertical="12dp" />
+                    android:layout_marginVertical="12dp"
+                    android:background="?attr/dividerHorizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Total a pagar:"
+                        android:text="@string/total_a_pagar"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="?android:attr/textColorPrimary" />
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/tvTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="?attr/colorPrimary"
                         tools:text="$39.151" />
                 </LinearLayout>
 
@@ -130,15 +137,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Proceder al Pago"
-                    android:textAppearance="?attr/textAppearanceButton"
                     android:paddingVertical="12dp"
+                    android:text="@string/proceder_al_pago"
+                    android:textAppearance="?attr/textAppearanceButton"
                     app:cornerRadius="12dp"
                     app:icon="@drawable/ic_pago"
                     app:iconGravity="textStart"
                     app:iconTint="@android:color/white" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
