@@ -13,29 +13,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.applibreria.databinding.FragmentDescripcionBinding;
+import com.example.applibreria.databinding.FragmentPagarBinding;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Objects;
 
-public class DescripcionFragment extends Fragment {
+public class PagarFragment extends Fragment {
 
-    private FragmentDescripcionBinding binding;
 
-    public DescripcionFragment() {
+    private FragmentPagarBinding binding;
 
+    public PagarFragment() {
+        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentDescripcionBinding.inflate(inflater, container, false);
-
-        return binding.getRoot();
+        return inflater.inflate(R.layout.fragment_pagar, container, false);
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -49,33 +44,13 @@ public class DescripcionFragment extends Fragment {
                         NavController nav = Navigation.findNavController(requireView());
                         // Vuelve al anterior si hay algo en el back stack
                         if (!nav.popBackStack()) {
-                            // Si no hay a dónde volver, cierra la Activity (opcional)
+                            // Si no hay a dónde volver, cierra la Activity
                             requireActivity().finish();
                         }
                     }
                 }
         );
 
-        // Recibir argumentos enviados desde el adapter
-        Bundle args = requireArguments();
-        String titulo = args.getString("titulo", "");
-        String autor  = args.getString("autor", "");
-        String anio   = args.getString("anio", "");
-        int descripcion   = args.getInt("descripcion", 0);
-        int imagen = args.getInt("imagenResId", 0);
-        double precio = args.getDouble("precio", 0);
-
-        // Pintar UI con binding
-        binding.tvTitulo.setText(titulo);
-        binding.tvAutor.setText(autor);
-        binding.tvAnio.setText(anio);
-        binding.tvDetalle.setText(descripcion);
-        NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(new Locale("es", "CL"));
-        binding.tvPrecioDesc.setText(formatoMoneda.format(precio));
-
-        if (imagen != 0) {
-            binding.ivPortada.setImageResource(imagen);
-        }
     }
 
     @Override
@@ -83,5 +58,4 @@ public class DescripcionFragment extends Fragment {
         super.onDestroyView();
         binding = null; // evita memory leaks
     }
-
 }

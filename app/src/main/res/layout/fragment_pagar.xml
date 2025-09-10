@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".PagarFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp"> <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/m_todos_de_pago"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_metodos_pago"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginVertical="24dp"
+                android:contentDescription="@string/imagen_con_los_m_todos_de_pago_disponibles"
+                android:scaleType="fitCenter"
+                android:src="@drawable/metodos_pago" />
+
+            <TextView
+                android:id="@+id/tv_gracias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/gracias_por_su_preferencia"
+                android:textColor="#006064"
+                android:textSize="20sp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tv_advertencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:text="**Página sin funcionamiento**"
+                android:textSize="15sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

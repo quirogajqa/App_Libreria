@@ -20,7 +20,11 @@
     <string name="alas_de_sangre">Violet Sorrengail es obligada a unirse al Cuadrante de Jinetes, una academia donde los dragones matan a quienes son débiles y los cadetes no tienen piedad. Si sobrevive al entrenamiento, tendrá que unirse a la guerra. En este lugar, la única opción es volar o morir.</string>
     <string name="pagar">Pagar</string>
     <string name="eliminar_del_carro">eliminar_del_carro</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="m_todos_de_pago">Métodos de Pago</string>
+    <string name="imagen_con_los_m_todos_de_pago_disponibles">Imagen con los métodos de pago disponibles</string>
+    <string name="gracias_por_su_preferencia">Gracias por su preferencia.</string>
 
 
 </resources>

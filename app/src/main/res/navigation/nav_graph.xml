@@ -31,7 +31,15 @@
         android:id="@+id/carritoFragment"
         android:name="com.example.applibreria.CarritoFragment"
         android:label="Carrito"/>
+    <action
+        android:id="@+id/action_carritoFragment_to_pagarFragment"
+        app:destination="@id/pagarFragment"/>
     <argument
         android:name="titulo"
         app:argType="string"/>
+    <fragment
+        android:id="@+id/pagarFragment"
+        android:name="com.example.applibreria.PagarFragment"
+        android:label="Pagar">
+    </fragment>
 </navigation>
