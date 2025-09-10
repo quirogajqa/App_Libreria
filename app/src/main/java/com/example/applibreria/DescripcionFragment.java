@@ -17,7 +17,6 @@ import com.example.applibreria.databinding.FragmentDescripcionBinding;
 
 import java.text.NumberFormat;
 import java.util.Locale;
-import java.util.Objects;
 
 public class DescripcionFragment extends Fragment {
 
@@ -45,11 +44,12 @@ public class DescripcionFragment extends Fragment {
         requireActivity().getOnBackPressedDispatcher().addCallback(
                 getViewLifecycleOwner(),
                 new OnBackPressedCallback(true) {
-                    @Override public void handleOnBackPressed() {
+                    @Override
+                    public void handleOnBackPressed() {
                         NavController nav = Navigation.findNavController(requireView());
                         // Vuelve al anterior si hay algo en el back stack
                         if (!nav.popBackStack()) {
-                            // Si no hay a dónde volver, cierra la Activity (opcional)
+                            // Si no hay a dónde volver, cierra la Activity
                             requireActivity().finish();
                         }
                     }
@@ -59,13 +59,12 @@ public class DescripcionFragment extends Fragment {
         // Recibir argumentos enviados desde el adapter
         Bundle args = requireArguments();
         String titulo = args.getString("titulo", "");
-        String autor  = args.getString("autor", "");
-        String anio   = args.getString("anio", "");
-        int descripcion   = args.getInt("descripcion", 0);
+        String autor = args.getString("autor", "");
+        String anio = args.getString("anio", "");
+        int descripcion = args.getInt("descripcion", 0);
         int imagen = args.getInt("imagenResId", 0);
         double precio = args.getDouble("precio", 0);
 
-        // Pintar UI con binding
         binding.tvTitulo.setText(titulo);
         binding.tvAutor.setText(autor);
         binding.tvAnio.setText(anio);

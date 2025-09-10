@@ -6,52 +6,48 @@
     android:background="@color/background_light"
     tools:context=".PagarFragment">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="16dp"> <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="@string/m_todos_de_pago"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/iv_metodos_pago"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_marginVertical="24dp"
-                android:contentDescription="@string/imagen_con_los_m_todos_de_pago_disponibles"
-                android:scaleType="fitCenter"
-                android:src="@drawable/metodos_pago" />
+        <ImageView
+            android:id="@+id/iv_metodos_pago"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginVertical="40dp"
+            android:contentDescription="@string/imagen_con_los_m_todos_de_pago_disponibles"
+            android:scaleType="fitCenter"
+            android:src="@drawable/metodos_pago" />
 
-            <TextView
-                android:id="@+id/tv_gracias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@string/gracias_por_su_preferencia"
-                android:textColor="#006064"
-                android:textSize="20sp"
-                android:gravity="center" />
+        <TextView
+            android:id="@+id/tv_gracias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#006064"
+            android:textSize="20sp"
+            tools:text="@string/gracias_por_su_preferencia" />
 
-            <TextView
-                android:id="@+id/tv_advertencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                tools:text="**Página sin funcionamiento**"
-                android:textSize="15sp"
-                android:gravity="center" />
+        <TextView
+            android:id="@+id/tv_advertencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            tools:text="**Página sin funcionamiento**" />
 
-        </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </FrameLayout>

@@ -26,10 +26,11 @@ public class PagarFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pagar, container, false);
+        binding = FragmentPagarBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -40,7 +41,8 @@ public class PagarFragment extends Fragment {
         requireActivity().getOnBackPressedDispatcher().addCallback(
                 getViewLifecycleOwner(),
                 new OnBackPressedCallback(true) {
-                    @Override public void handleOnBackPressed() {
+                    @Override
+                    public void handleOnBackPressed() {
                         NavController nav = Navigation.findNavController(requireView());
                         // Vuelve al anterior si hay algo en el back stack
                         if (!nav.popBackStack()) {

@@ -1,7 +1,6 @@
 package com.example.applibreria;
 
 
-
 public class Libro {
 
     private String titulo;
@@ -15,7 +14,7 @@ public class Libro {
 
     private int descripcion;
 
-    public Libro (String titulo, String autor, String anio, int imagen, int descripcion, double precio) {
+    public Libro(String titulo, String autor, String anio, int imagen, int descripcion, double precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.anio = anio;
@@ -80,4 +79,5 @@ public class Libro {
     public void setSeleccionado(boolean seleccionado) {
         isSeleccionado = seleccionado;
     }
+
 }

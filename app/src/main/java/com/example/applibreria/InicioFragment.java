@@ -43,9 +43,9 @@ public class InicioFragment extends Fragment {
 
     private void cargarDatosTop() {
         listaTopLibros.clear();
-        listaTopLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz, R.string.la_bailarina_de_auschwitz,0));
-        listaTopLibros.add(new Libro("El psicoanalista", "John Katzenbach", "2002", R.drawable.el_psicoanalista, R.string.el_psicoanalista,0));
-        listaTopLibros.add(new Libro("La casa de los espíritus", "Isabel Allende", "1982", R.drawable.la_casa_de_los_espiritus, R.string.la_casa_de_los_espiritus,0));
+        listaTopLibros.add(new Libro("La bailarina de Auschwitz", "Edith Eger", "2018", R.drawable.la_bailarina_de_auschwitz, R.string.la_bailarina_de_auschwitz, 0));
+        listaTopLibros.add(new Libro("El psicoanalista", "John Katzenbach", "2002", R.drawable.el_psicoanalista, R.string.el_psicoanalista, 0));
+        listaTopLibros.add(new Libro("La casa de los espíritus", "Isabel Allende", "1982", R.drawable.la_casa_de_los_espiritus, R.string.la_casa_de_los_espiritus, 0));
     }
 
     private void mostrarDatos() {
@@ -67,5 +67,11 @@ public class InicioFragment extends Fragment {
         binding.tvAnio3.setText(listaTopLibros.get(2).getAnio());
         binding.ivPortada3.setImageResource(listaTopLibros.get(2).getImagen());
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // evita memory leaks
     }
 }
