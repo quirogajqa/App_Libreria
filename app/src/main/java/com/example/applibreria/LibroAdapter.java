@@ -65,6 +65,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             args.putString("anio",  libro.getAnio());
             args.putInt("descripcion", libro.getDescripcion());
             args.putInt("imagenResId", libro.getImagen());
+            args.putDouble("precio", libro.getPrecio());
 
             Navigation.findNavController(v).navigate(R.id.action_listaFragment_to_descripcionFragment, args);
         });
@@ -90,7 +91,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
     public static class LibroViewHolder extends RecyclerView.ViewHolder {
         // Referencias a las vistas del layout item_estudiante.xml
-        TextView tvTitulo, tvAutor, tvAnio;
+        TextView tvTitulo, tvAutor, tvAnio, tvPrecio;
         ImageView ivPortada;
         TextView tvVerDetalle;
 
@@ -111,6 +112,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             tvAnio = itemView.findViewById(R.id.tv_anio);
             ivPortada = itemView.findViewById(R.id.iv_portada);
             tvVerDetalle = itemView.findViewById(R.id.tv_ver_detalle);
+            tvPrecio = itemView.findViewById(R.id.tv_precio_desc);
             cbSeleccion = itemView.findViewById(R.id.cbSeleccion);
         }
     }

@@ -9,7 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.applibreria.R;
+
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class LibroCarritoAdapter extends RecyclerView.Adapter<LibroCarritoAdapter.CarritoViewHolder> {
 
@@ -38,7 +41,8 @@ public class LibroCarritoAdapter extends RecyclerView.Adapter<LibroCarritoAdapte
         holder.tvTitulo.setText(libro.getTitulo());
         holder.tvAutor.setText(libro.getAutor());
         holder.ivPortada.setImageResource(libro.getImagen());
-        holder.tvPrecio.setText(Double.toString(libro.getPrecio()));
+        NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(new Locale("es", "CL"));
+        holder.tvPrecio.setText(formatoMoneda.format(libro.getPrecio()));
         // 3. Manejar el clic del botón de eliminar
         holder.btnEliminar.setOnClickListener(v -> {
             if (listener != null) listener.onLibroEliminado(libro);
