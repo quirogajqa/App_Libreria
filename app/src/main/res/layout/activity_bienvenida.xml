@@ -32,7 +32,7 @@
             android:layout_height="180dp"
             android:layout_marginVertical="50dp"
             android:contentDescription="@string/logo_app"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo_libreria" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_animation"
